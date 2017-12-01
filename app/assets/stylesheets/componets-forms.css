@@ -1,0 +1,18 @@
+.form-control {
+    height: 30px;
+    font-size: 12px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.chosen-container-single .chosen-single {
+    height: 30px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+.glyphicon-remove-circle {
+    color: #ff4a35;
+}

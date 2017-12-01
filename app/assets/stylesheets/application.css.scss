@@ -1,0 +1,187 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+ *= require_self
+ *= require_tree .
+ *= require bootstrap-wysihtml5
+ *= require select2
+ *= require select2-bootstrap
+ */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$navbar-height: 36px;
+$font-size-base: 12px;
+
+@import "bootstrap";
+
+.td_padding_left {
+  padding-left: 15px !important;
+}
+
+.acao_time {
+  font-style: italic;
+  font-size: 11px;
+  color: darkgray;
+}
+
+.table-white-space {
+
+  white-space: nowrap;
+
+}
+
+.ajax-loader{
+  background: url('ajax-loader.gif');
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 2px;  
+}
+
+.alert-custom > *{
+  margin-top: -6px;  
+}
+.alert-custom {
+  /*min-height: 20px !important;*/
+}
+
+.panel-unorc-checkup {
+  min-height: 40px !important;
+}
+
+.alert-default {
+  background: #eee;
+  color: #999;
+}
+
+.desenvolvimento {
+  background: #990000;
+  color: #ffffff;
+  height: 16px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.dropdown-menu > li.disabled.nav-header > a {
+    cursor: default;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+div .logo img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+.list-group-item-acao-vincular {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+div .cabecalho {
+  a.btn {
+    margin-left: 10px;
+  }
+  min-height: 35px;
+  margin: 0px 0px 0px 20px;
+  h3 {
+    margin-top: 0px;
+  }
+}
+
+ul.analise-acoes li a .badge {
+  margin-left: 10px;
+}
+
+.red {
+  color: #ff3232;
+}
+
+.green {
+  color: #328332;
+}
+.blue {
+  color: #0088cc;
+}
+.red {
+  color: red;
+}
+
+ul.avisos {
+  > li {
+    font-size: 14px;
+  }
+}
+
+.fpl-searchbox {
+  background-color: #fff;
+  margin: 15px 0px 15px 0px;
+  padding: 15px;
+}
+.uppercase { 
+  text-transform: uppercase; 
+}
+
+.list-group-analise-acoes li:hover {
+  background: #eee;
+}
+
+.notification-body h8 {
+  font-weight: normal;
+  color: #0088cc;
+  font-size: 12px;
+}
+
+.metas {
+  color: #0088cc;
+}
+.altura_painel_loa_home {
+  overflow-y: hidden;
+  height: 270px;
+}
+
+.a_inline {
+  display: inline !important;
+}
+
+.change-unorc {
+  padding: 4px;
+  width: 300px;
+}
+
+.change-ano {
+  padding: 4px;
+  width: 150px;
+}
+#page-loading {
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    text-align: center;
+    display: none;
+}
+
+#browser-warning {
+  position: absolute;
+  left: 50%;
+  width: 470px;
+  margin-left: -235px;
+  font-size: 16px;
+}
+
+.saffdata {
+  color: #333;
+}

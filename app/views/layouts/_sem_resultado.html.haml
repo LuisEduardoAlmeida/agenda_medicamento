@@ -1,0 +1,4 @@
+.row
+  .col-md-5.col-md-offset-3
+    .alert.alert-success.text-center
+      ="Nenhum#{ (defined? final).nil? ? '' : final} #{model.model_name.human.downcase} encontrad#{ (defined? final).nil? ? 'o' : final}."

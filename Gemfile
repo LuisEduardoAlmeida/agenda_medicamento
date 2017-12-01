@@ -12,6 +12,17 @@ gem 'rails', '~> 5.1.4'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'select2-rails', '3.5.7'
+gem 'nested_form'
+gem 'bootbox-rails','0.3.0'
+gem 'roman-numerals'
+gem 'haml'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+gem 'bootstrap-wysihtml5-rails'
+gem 'font-awesome-sass', '4.7.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,7 +49,6 @@ gem 'haml-rails'
 gem 'haml'
 gem 'devise', "~>4.3.0"
 
-gem 'bootstrap-sass', '~> 3.1.1'
 
 
 

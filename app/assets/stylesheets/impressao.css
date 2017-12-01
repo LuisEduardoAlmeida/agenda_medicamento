@@ -1,0 +1,7 @@
+
+@media print {
+
+    .glyphicon-print {
+        display: none !important
+    }
+}

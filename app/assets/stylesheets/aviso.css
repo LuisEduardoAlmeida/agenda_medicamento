@@ -1,0 +1,22 @@
+/*.panel-aviso {
+	height: 303px;
+}*/
+.avisos li {
+	padding-top: 3px;
+}
+.aviso_titulo {
+	font-size: 19px;
+	padding-top: 2px;
+	margin: 0px 10px 0px 5px;
+	float: left;
+}
+.aviso_time {
+	padding-left: 24px;
+	font-style: italic;
+	font-size: 11px;
+	color: darkgray;
+}
+.nenhum-aviso {
+	font-weight: normal;
+	font-size: 12px !important;
+}

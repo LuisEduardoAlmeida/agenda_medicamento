@@ -1,0 +1,103 @@
+.logo {
+    padding: 10px;
+}
+
+.titulo {
+  float: left;
+  min-width: 310px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.titulo img {
+  float: left;
+  margin-top: 3px;
+}
+
+.texto-projeto {
+  float: right;
+  margin-left: 10px;  
+  margin-top: 6px;
+}
+
+.nome-projeto {
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.bar-tools-right {
+    margin-top: -26px;
+    padding-right: 30px;    
+}
+
+.bar-tools-right a {
+    text-decoration: none;
+}
+
+.bar-tools-right span.glyphicon {
+    color: #999 !important;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.bar-tools-right span.glyphicon:hover {
+    color: #0088cc !important ;
+}
+
+.input-group-search {
+    width: 300px;
+    height: 30px;
+}
+
+.bar-tools-right .btn-search {
+    cursor: pointer;
+}
+
+.bar-tools-right .input-search {
+    height: 32px;
+    
+}
+
+.notificacoes .badge{
+    font-size: 10px;
+    background: #cb4437;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 14px;
+    margin-top: -25px;
+    margin-left: 10px;
+    padding: 0px;
+    padding-top: 4px;
+    text-align: center;
+
+}
+
+
+.menu-topo ul {
+    border-top: 1px #eee solid;
+}
+
+.menu-topo .navbar-nav > li >a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.barra-user-info .glyphicon  {
+    font-size: 16px;
+}
+.barra-user-info {
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.barra-user-info > * {
+   margin-left: 15px;
+
+}
+
+.navbar-admin li a {padding: 10px;}
+.navbar-admin li:hover a {background-color: #fff;}
+.open a {background-color: #fff !important;}

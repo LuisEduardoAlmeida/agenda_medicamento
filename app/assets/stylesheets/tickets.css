@@ -1,0 +1,68 @@
+.ticket {
+	float: left;
+  margin-bottom: 15px;
+}
+
+.ticket-assunto {
+  font-weight: bold;
+  width: 200px;
+  display: inline-block;
+}
+
+.ticket ul li {
+  list-style-type: none;
+  width: 100%;  
+  float: left;
+}
+
+.ticket-header {
+  background: #f1f1f1;
+  box-shadow: 0 3px 3px -3px #c5c6c6;
+  padding: 12px 17px;
+  border-bottom: 1px solid #c9c9c9;
+  margin-bottom: 20px;
+}
+
+.ticket .ticket-subject, .ticket-header p {
+  min-height: 20px;
+  font-size: 17.5px;
+}
+
+.ticket strong {
+  font-size: 14px;
+}
+
+.ticket-header .label {
+	vertical-align: top;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.ticket .ticket-subject h4, .ticket h4{
+  margin: 0px;
+}
+
+.ticket .ticket-content {
+	margin-left: 95px;
+  min-height: 80px;
+
+}
+
+.ticket-content .title {
+	font-size: 1.1em;
+  color: gray;
+}
+
+.ticket-content .title strong {
+  font-size: 1.2em;
+  color: black;
+}
+
+.ticket-answer {
+  margin-top: 20px;
+}
+
+.ticket-avatar {
+  width: 6%;
+  float: left;
+}

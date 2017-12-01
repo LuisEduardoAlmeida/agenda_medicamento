@@ -1,0 +1,8 @@
+ul.changelog > li {
+  font-size: 16px;
+  > span {
+    width: 100px;
+    display: inline-block;
+    vertical-align: text-top;
+  }
+}

@@ -1,0 +1,49 @@
+
+.background-login {
+  background-color: #FAFAFA;
+
+}
+.form-signin {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 9px 1px #ccc;
+}
+
+.form-aviso {
+  max-width: 650px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 9px 1px #ccc;
+}
+/*
+.logo-signin {
+  max-width: 300px;
+  padding: 0px 29px 0px;
+  margin: 0 auto 20px;
+}*/
+
+.logo-signin {
+  width: 515px;
+  height: 65px;
+  margin: 0 auto;
+}
+
+.container .sm-flash {
+  width: 350px;
+  margin: 0 auto; 
+}

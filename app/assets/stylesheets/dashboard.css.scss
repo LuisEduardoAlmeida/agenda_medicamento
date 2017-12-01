@@ -1,0 +1,69 @@
+$darker_bg_color: darken(#edeff1, 5%);
+$notification_teste: 5px 0px 0px 10px;
+$border_radius: 3px;
+$text_color: #34495e;
+$even_darker_gray: darken(#cecdd4, 20%);
+
+.activity {
+  font-size: 1.2em;  
+}
+
+li.activity {
+  list-style-type: none;
+}
+
+ul.notifications-list {
+  padding-left: 0px;
+  > li {
+    display: block;
+    border-top: 1px solid darken($darker_bg_color, 5%);
+    
+    &:first-child {
+      border-top: none;
+    }
+    
+    > a {
+      padding-top: 5px;
+      padding-left: 10px;
+      display: block;
+      position: relative;
+      min-height: 30px;      
+      
+      .glyphicon {
+        font-size: 19px;
+        float: left;
+      }
+
+      > img {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border-radius: $border_radius;
+      }
+      
+      .notification-body {
+        margin-left: 35px;
+        font-size: 13px;
+        color: $text_color;
+        padding-top: 1px;
+        
+        small {
+          line-height: 15px;
+          display: block;
+          font-style: italic;
+          color: $even_darker_gray;
+        }
+      }
+
+      &:hover {
+        background: $darker_bg_color;
+        padding: $notification_teste;
+        text-decoration:none;
+      }
+    }
+  }
+}
+
+.min-panel-height {
+  min-height: 185px;
+}
