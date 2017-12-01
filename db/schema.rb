@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20171201170406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "file_fdw"
   enable_extension "unaccent"
   enable_extension "pgcrypto"
+
+  create_table "reminders", force: :cascade do |t|
+    t.string "name"
+    t.time "time"
+    t.integer "days"
+    t.date "start_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
