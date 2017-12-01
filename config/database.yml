@@ -1,0 +1,21 @@
+default: &default
+ adapter: postgresql
+ username: postgres
+ password: postgres
+ host: 127.0.0.1
+ port: 5432
+ pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 7 } %>
+ encoding: UTF8
+ schema_search_path: "agenda_medicamento, public"
+
+development:
+ <<: *default
+ database: local
+
+test:
+ <<: *default
+ database: local_test
+
+production:
+ <<: *default
+ database: local
