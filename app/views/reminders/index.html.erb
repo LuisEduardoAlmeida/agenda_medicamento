@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lembretes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Time</th>
+      <th>Days</th>
+      <th>Start at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reminders.each do |reminder| %>
+      <tr>
+        <td><%= reminder.name %></td>
+        <td><%= reminder.time %></td>
+        <td><%= reminder.days %></td>
+        <td><%= reminder.start_at %></td>
+        <td><%= link_to 'Show', reminder %></td>
+        <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
+        <td><%= link_to 'Destroy', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Lembrete', new_reminder_path %>
