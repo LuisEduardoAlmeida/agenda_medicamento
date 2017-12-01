@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @reminder.name
+%p
+  %strong Time:
+  = @reminder.time
+%p
+  %strong Days:
+  = @reminder.days
+%p
+  %strong Start at:
+  = @reminder.start_at
+= link_to 'Edit', edit_reminder_path(@reminder)
+|
+= link_to 'Back', reminders_path

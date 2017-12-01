@@ -5,6 +5,10 @@ class RemindersController < ApplicationController
   # GET /reminders.json
   def index
     @reminders = Reminder.all
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   # GET /reminders/1

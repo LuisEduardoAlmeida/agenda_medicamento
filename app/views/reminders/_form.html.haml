@@ -1,0 +1,23 @@
+= form_with(model: reminder, local: true) do |form|
+  - if reminder.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(reminder.errors.count, "error")
+        prohibited this reminder from being saved:
+      %ul
+        - reminder.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :name
+    = form.text_field :name, id: :reminder_name
+  .field
+    = form.label :time
+    = form.time_select :time, id: :reminder_time
+  .field
+    = form.label :days
+    = form.number_field :days, id: :reminder_days
+  .field
+    = form.label :start_at
+    = form.date_select :start_at, id: :reminder_start_at
+  .actions
+    = form.submit
