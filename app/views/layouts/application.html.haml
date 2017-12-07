@@ -8,4 +8,51 @@
     / %link{:rel => "shortcut icon", :href => "/assets/favicon.ico" }
     = csrf_meta_tags
   %body
-    = yield
+    / - binding.pry
+    -if Rails.env.development?
+      .desenvolvimento
+        Desenvolvimento
+    -if Rails.env.homologacao?
+      .desenvolvimento
+        Homologação
+      .desenvolvimento
+        Dados de Teste
+
+    .container-fluid
+      %span.label.label-warning#page-loading
+        CARREGANDO
+      / - unless browser.modern?
+      /   %span.label.label-danger#browser-warning
+      /     Atenção: Você está utilizando um navegador incompatível!
+      /     %br
+      /     O sistema poderá apresentar instabilidade.
+      .titulo
+        / = link_to image_tag('logo-fortaleza.png'), root_path
+        .texto-projeto
+          %h4.nome-projeto SIOPFOR - Sistema Integrado de Orçamento e Planejamento
+          %span.nome-prefeitura Prefeitura Municipal de Fortaleza
+      .collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+        %div.administrador.pull-right.barra-user-info
+          %ul.nav.navbar-nav.navbar-right.navbar-admin.hidden-print
+            %li
+              = link_to '#', "data-toggle" => "dropdown" do
+                %span.glyphicon.glyphicon-tower.sdf
+                
+                %span.caret
+
+            %li
+              = link_to destroy_user_session_path, method: :delete do
+                %span.glyphicon.glyphicon-log-out
+                Sair
+
+
+
+
+    .container-fluid
+      = yield
+    
+    .footer
+      %span.copyright
+        = "© #{Date.today.year}"
+    
