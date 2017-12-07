@@ -1,0 +1,37 @@
+%h1 Listing products
+
+%table
+  %thead
+    %tr
+      %th Description
+      %th Provider
+      %th Sale price
+      %th Purchase price
+      %th Stock
+      %th Minimum stock
+      %th Exempt
+      %th Category
+      %th Discount
+      %th
+      %th
+      %th
+
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td= product.description
+        %td= product.provider
+        %td= product.sale_price
+        %td= product.purchase_price
+        %td= product.stock
+        %td= product.minimum_stock
+        %td= product.exempt
+        %td= product.category_id
+        %td= product.discount
+        %td= link_to 'Show', product
+        %td= link_to 'Edit', edit_product_path(product)
+        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Product', new_product_path

@@ -1,0 +1,31 @@
+= simple_nested_form_for(@doctor) do |f|
+  = f.error_notification
+  - if @doctor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@doctor.errors.count, "error")} prohibited this doctor from being saved:"
+      %ul
+        - @doctor.errors.full_messages.each do |message|
+          %li= message
+  .col-xs-8.form-inputs
+    .row
+      .col-xs-12
+        = f.input :name, label: 'Nome', input_html: {class: 'uppercase'}
+    .row
+      .col-xs-12        
+        = f.input :specialty, label: 'Especialidade'
+    .row
+      .col-xs-12                 
+        = f.input :phone, label: 'Telefone', as: :integer
+    .row
+      .col-xs-12                 
+        = f.input :adress, label: 'Endereço', as: :text
+    .row
+      .col-xs-12                 
+        = f.input :complemento, label: 'Complemento', as: :text
+      
+  .col-xs-12.form-actions
+    .pull-right
+      = f.button :submit, class: 'btn btn-success'
+      = link_to t('.cancel', default: t("helpers.links.cancel")), doctors_path, class: 'btn btn-warning'
+:javascript
+  $("select.select2").select2();

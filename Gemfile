@@ -48,8 +48,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'haml'
 gem 'devise', "~>4.3.0"
-
-
+gem 'simple_form'
 
 
 

@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Description:
+  = @product.description
+%p
+  %b Provider:
+  = @product.provider
+%p
+  %b Sale price:
+  = @product.sale_price
+%p
+  %b Purchase price:
+  = @product.purchase_price
+%p
+  %b Stock:
+  = @product.stock
+%p
+  %b Minimum stock:
+  = @product.minimum_stock
+%p
+  %b Exempt:
+  = @product.exempt
+%p
+  %b Category:
+  = @product.category_id
+%p
+  %b Discount:
+  = @product.discount
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path

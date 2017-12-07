@@ -10,13 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201170406) do
+ActiveRecord::Schema.define(version: 20171207173056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "file_fdw"
   enable_extension "unaccent"
   enable_extension "pgcrypto"
+
+  create_table "doctors", force: :cascade do |t|
+    t.string "name"
+    t.string "specialty"
+    t.integer "phone"
+    t.string "adress"
+    t.string "complemento"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "description"
+    t.bigint "provider_id"
+    t.integer "sale_price"
+    t.integer "purchase_price"
+    t.integer "stock"
+    t.integer "minimum_stock"
+    t.string "exempt"
+    t.integer "category_id"
+    t.integer "discount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provider_id"], name: "index_products_on_provider_id"
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string "name"
+    t.string "business_name"
+    t.string "draft"
+    t.string "address"
+    t.string "phone_one"
+    t.string "phone_two"
+    t.string "email"
+    t.string "web"
+    t.string "kind"
+    t.string "obser"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reminders", force: :cascade do |t|
     t.string "name"
@@ -27,4 +67,5 @@ ActiveRecord::Schema.define(version: 20171201170406) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "products", "providers"
 end

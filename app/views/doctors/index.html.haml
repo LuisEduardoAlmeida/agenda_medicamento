@@ -1,0 +1,27 @@
+- model_class = Doctor
+%div.page-header
+  = link_to "Novo lembrete", new_doctor_path, :class => 'btn btn-warning pull-right'
+  %h3 Lista de Médicos
+- if @doctors.present?
+  %table.table.table-striped.table-condensed
+    %tr
+      %th Nome
+      %th Especialidade
+      %th telefone
+      %th Endereço
+      %th Complemento
+      %th
+      %th
+      %th
+      - @doctors.each do |doctor|
+        %tr
+          %td= doctor.name
+          %td= doctor.specialty
+          %td= doctor.phone
+          %td= doctor.adress
+          %td= doctor.complemento
+          %td= link_to 'Show', doctor
+          %td= link_to 'Edit', edit_doctor_path(doctor)
+          %td= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' }
+- else
+  =render 'layouts/sem_resultado', model: params[:controller].singularize.camelize.constantize
