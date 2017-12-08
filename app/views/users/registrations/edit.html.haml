@@ -1,0 +1,18 @@
+%h3 Editar Perfil
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+
+  = f.error_notification
+  .form-inputs
+    = f.input :nome, :required => true, label: "Nome"
+    = f.input :cpf, :required => true, label: "CPF"
+    = f.input :email, :required => true, :autofocus => true, label: "E-mail"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %p
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    /= f.input :password, :autocomplete => "off", :hint => "Deixe esse campo em branco caso não queira mudar", :required => false, label: "Nova senha"
+    = f.input :password, :autocomplete => "off", :required => false, label: "Nova senha"
+    = f.input :password_confirmation, :required => false, label: "Repita sua nova senha"
+    = f.input :current_password, :hint => "Digite sua senha atual para confirmar as mudanças", :required => true, label: "Senha atual"
+  .form-actions
+    = f.button :submit, "Modificar"
+

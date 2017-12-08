@@ -1,0 +1,46 @@
+.col-lg-11.col-md-10.col-sm-10.col-xs-12.content-dashboard.content-dashboard-1
+  %br
+  .row
+    .col-lg-6.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %strong
+            = @usuarios_online.count
+            = @usuarios_online.count == 1 ? 'Usuário Online' :  'Usuários Online'
+
+          .small.pull-right
+            -#= link_to "ver todas", activity_index_path
+        .panel-body.altura_painel_loa_home
+          %h4= @usuarios_online.count == 1  ? 'Usuário': 'Usuários'
+
+          -@usuarios_online.each do |usuario|
+            %li.list-unstyled
+              %span.glyphicon.glyphicon-user
+              = usuario.nome
+
+          %ul.unstyled.notifications-list
+  -#  .col-lg-6.col-md-6.col-sm-6.col-xs-12
+  -#    .panel.panel-default
+  -#      .panel-heading
+  -#        %strong
+  -#          2
+  -#        .small.pull-right
+  -#          = link_to "ver todas", activity_index_path
+  -#      .panel-body.altura_painel_loa_home
+  -#        %ul.unstyled.notifications-list
+  -#
+  -#.row
+  -#  .col-lg-6.col-md-6.col-sm-12.col-xs-12
+  -#    .panel.panel-info
+  -#      .panel-heading
+  -#        %strong
+  -#          3
+  -#      .panel-body
+  -#
+  -#
+  -#  .col-lg-6.col-md-6.col-sm-12.col-xs-12
+  -#    .panel.panel-info
+  -#      .panel-heading
+  -#        %strong
+  -#          4
+  -#      .panel-body

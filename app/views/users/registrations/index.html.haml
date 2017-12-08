@@ -1,0 +1,33 @@
+- model_class = User
+
+%div.page-header
+  = link_to t('.new', :default => t("helpers.links.new"),model: model_class.model_name.human), new_user_registration_custom_path, :class => 'btn btn-warning pull-right'
+%table.table.table-striped.table-condensed.table-filter-o
+  %thead
+    %tr
+      %th{filter: 'false'}=model_class.human_attribute_name(:id)
+      %th=model_class.human_attribute_name(:nome)
+      %th=model_class.human_attribute_name(:email)
+      %th=model_class.human_attribute_name(:telefone)
+      %th=model_class.human_attribute_name(:admin)
+      %th Perfil
+      %th Último Acesso
+      %th{filter: 'false'}=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @users.each do |usuario|
+      %tr
+        %td= usuario.id
+        %td= usuario.name
+        %td
+          = raw content_tag(:abbr, '*', title: 'Usuário nunca acessou!') if usuario.sign_in_count == 0
+          = usuario.email
+        %td= usuario.telefone
+        %td
+        %td
+          
+        %td
+          / - perfis = UserRole.joins(:user).where(users: {id: usuario.id}).order(:role)
+        %td
+          = link_to 'Editar' ,edit_user_registration_custom_path(usuario), class: 'btn btn-default btn-xs' 
+          / - if can? :reset_password, usuario
+          / 	= link_to "Resetar Senha", resetar_senha_path(usuario.id), :class => 'btn btn-default btn-xs', remote: true, data: {confirm: "Deseja realmente resetar a senha do usuário"}

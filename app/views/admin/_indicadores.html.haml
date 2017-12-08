@@ -1,0 +1,53 @@
+.col-lg-11.col-md-10.col-sm-10.col-xs-12.content-dashboard.content-dashboard-2
+  %br
+  .panel.panel-info
+    .panel-heading
+      Indicadores
+    .panel-body
+      .col-lg-6.col-md-6.col-sm-10.col-xs-12
+        = simple_form_for :indicador, method: :get do |f|
+          = f.input :programa, collection: @programas, label_method: :codigo_descricao, input_html: { class: 'select2'}, selected: (params[:indicador] && params[:indicador][:programa]) ? params[:indicador][:programa] : nil, include_blank: true
+          = f.input :fonte, collection: Indicador.pluck(:fonte).uniq.compact, input_html: {class: 'select2'}, selected: (params[:indicador] && params[:indicador][:fonte]) ? params[:indicador][:fonte] : nil, include_blank: true
+          = f.input :unidades_orcamentarias, collection: @unidades_orcamentarias, label_method: :codigo_descricao, label: 'Unidade Orçamentária', input_html: {class: 'select2'}, selected: (params[:indicador] && params[:indicador][:unidades_orcamentarias]) ? params[:indicador][:unidades_orcamentarias] : nil, include_blank: true
+          = hidden_field_tag(:aba, 'indicadores')
+          .pull-right
+            = f.button :submit, class: 'btn-primary btn', value: t('helpers.submit.filter')
+            = link_to 'Todos os Programas', admin_index_path(aba: 'indicadores') , class: 'btn btn-default'
+
+    - codigo_programa = 0
+    %div{:style => 'height:550px; overflow:auto;'}
+      %table.table.table-hover.table-condensed
+        %thead
+          %tr
+            %th= Indicador.human_attribute_name(:indicadores)
+            %th= Indicador.human_attribute_name(:unidade)
+            %th= Indicador.human_attribute_name(:fonte)            
+            %th.text-right= Indicador.human_attribute_name(:indice_recente)
+            %th.text-right= Indicador.human_attribute_name(:indice_final)
+        
+          %tbody
+            - @indicadores.each do |indicador|
+              - if indicador.programa.codigo != codigo_programa
+                - codigo_programa = indicador.programa.codigo
+                %tr.warning
+                  %td{colspan: 5}
+                    %strong
+                      = indicador.programa.codigo_descricao
+                %tr.warning
+                  %td{colspan: 5}
+                    %small
+                      = indicador.programa.objetivo
+              %tr
+                %td{style: 'padding-left: 20px' }= truncate(indicador.descricao, length: 70, delimiter: ' ')
+                %td= indicador.unidade
+                %td= indicador.fonte
+                %td.text-right= number_with_delimiter indicador.indice_recente.to_i
+                %td.text-right= number_with_delimiter indicador.indice_final.to_i
+
+            - if @indicadores.count == 0
+              %tr.danger
+                %td{colspan: 5}
+                  %strong
+                    = t('messages.resultado_nao_encontrado')
+
+    .panel-footer

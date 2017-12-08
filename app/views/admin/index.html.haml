@@ -1,0 +1,40 @@
+.col-lg-1.col-md-2.col-sm-2.col-xs-12.side_bar
+  %li#dashboard-1.tab-dashboard{ class: (params[:aba] == 'dashboard' or params[:aba].blank?) ? 'active' : '' }
+    %div
+      = link_to admin_index_path(aba: 'dashboard') do
+        %span.glyphicon.glyphicon-stats
+        Dashboard
+  %li#dashboard-3.tab-dashboard
+    %div
+      = link_to checkup_admin_index_path(aba: 'checkup') do
+        %span.glyphicon.glyphicon-check.red
+        Check-Up
+  %li#dashboard-4.tab-dashboard{ class: (params[:aba] == 'indicadores') ? 'active' : '' }
+    %div
+      = link_to admin_index_path(aba: 'indicadores') do
+        %span.glyphicon.glyphicon-list-alt
+        Indicadores
+  %li#dashboard-5.tab-status{ class: (params[:aba] == 'status') ? 'active' : '' }
+    %div
+      = link_to admin_index_path(aba: 'status') do
+        %span.glyphicon.glyphicon-th
+        Status
+  -# Content tab 1
+-if params[:aba] == 'dashboard' or params[:aba].blank?
+  = render 'dashboard'
+  -# Content tab 2
+-if params[:aba] == 'indicadores'
+  = render 'indicadores'
+-if params[:aba] == 'status'
+  = render 'status'
+
+-# Content tab 3
+.col-lg-11.col-md-10.col-sm-2.col-xs-12.content-dashboard.content-dashboard-3{ style: 'display: none'}
+  %br
+  %h3
+    Em breve!
+-# Content tab 4
+.col-lg-11.col-md-10.col-sm-2.col-xs-12.content-dashboard.content-dashboard-4{ style: 'display: none'}
+  %br
+  %h3
+    Em breve!

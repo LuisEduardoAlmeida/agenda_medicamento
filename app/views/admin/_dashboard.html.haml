@@ -1,0 +1,40 @@
+.col-lg-11.col-md-10.col-sm-10.col-xs-12.content-dashboard.content-dashboard-1
+  %br
+  .row
+    .col-lg-6.col-md-6.col-sm-6.col-xs-12
+      = visualizar_avisos coplam: true, todos_avisos: true
+
+    .col-lg-6.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %strong
+            Atividades Recentes
+          .small.pull-right
+            = link_to "ver todas", activity_index_path
+        .panel-body.altura_painel_loa_home
+          %ul.unstyled.notifications-list
+            - if @activities.any?
+              = render_activities(@activities, layout: :activity, locals: {truncate_length: 30})
+            - else
+              %li Nenhuma atividade recente encontrada
+  .row
+    .col-lg-6.col-md-6.col-sm-12.col-xs-12
+      .panel.panel-info
+        .panel-heading
+          %strong
+            Distribuição Orçamentária por Função
+        .panel-body
+          #monitor-execucao1{style: "min-width: 200px; height: 280px; margin: 0 auto"}          
+          = render partial: 'graficos/despesasXfuncoes_pie'
+    .col-lg-6.col-md-6.col-sm-12.col-xs-12
+      .panel.panel-info
+        .panel-heading
+          %strong
+            LOA #{@loa.ano} - Grupos de Despesa - Global
+        .panel-body          
+          - if @loa.total_detalhamento > 0
+            #monitor-execucao{style: "min-width: 200px; height: 280px; margin: 0 auto"}
+            = @chart2.render            
+          - else
+            .alert.alert-warning{role: 'alert'}
+              %strong Ainda não há dados disponíveis

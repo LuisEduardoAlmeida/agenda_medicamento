@@ -1,0 +1,31 @@
+%h3= "Check-up LOA #{@loa.ano}"
+%br    
+.btn-group
+  %button.btn.btn-default.slide-toggle    
+    Visão Simplificada
+  %button.btn.btn-default.active.toggle-success    
+    Sucessos
+  %button.btn.btn-default.active.toggle-dangers    
+    Problemas
+%br
+%br
+
+-img_loader = image_tag 'ajax-loader.gif', class: 'loading'
+.col-xs-12.col-sm-12.col-md-12.col-lg-12
+  - @unidades_orcamentarias.each do |unidade_orcamenataria|  
+    .panel-unorc-checkup{"data-unorc" => [unidade_orcamenataria.codigo_descricao, unidade_orcamenataria.id], style: 'display: none; float: left; width: 300px; padding-left: 10px;'}
+      .panel.panel-info
+        .panel-heading
+          %h3.panel-title
+            %strong= "#{unidade_orcamenataria.orgao.codigo} - #{unidade_orcamenataria.orgao.sigla}"
+        .panel-body
+          - checagens = ['Limites', 'Detalhamentos', 'Ações', 'Funcional-Programática', 'Produto/Unidade de Ação', 'Ações com Produto sem Meta Física']
+          - checagens.each_with_index do |item, i|
+            .alert.alert-default.alert-custom{:role => "alert", "data-unorc" => unidade_orcamenataria.id, class: "alert-#{i}" , style: 'display: none'}
+              .text= "#{item} "            
+
+:javascript
+  checkup()
+  
+  
+  

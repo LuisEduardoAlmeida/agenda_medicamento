@@ -1,0 +1,10 @@
+%li
+
+  = link_to url, options  do
+    %span{class: icon}
+    .notification-body
+      %strong
+        = body
+      %small.time
+        = time_ago_in_words hora
+        = "por #{owner}"

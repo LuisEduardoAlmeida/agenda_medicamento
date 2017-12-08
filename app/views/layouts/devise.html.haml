@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title
+      SIOPFOR - Sistema Integrado de Orçamento e Planejamento - PMF
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %link{:rel => "shortcut icon", :href => "/assets/favicon-449ed87a21ae43d98aec0a79a367792e.ico" }
+    = csrf_meta_tags
+
+  %body.background-login
+
+    .navbar.navbar-default.nav-superior{role: "navigation"}
+      .container-fluid
+        .row-fluid
+          .col-md-offset-4{style:'padding-left: 3%;'}
+            .titulo        
+              = link_to image_tag("doctors-bag1.png"), root_path
+              .texto-projeto
+                %h4.nome-projeto SIGEMED - Sistema de Gerenciamento de Medicamentos
+    .container
+      .sm-flash
+        = bootstrap_flash
+      = yield
+    .text-center 
+      = "© #{Date.today.year}"
+
+
+
+    = yield :css
+
+
+    = yield :js

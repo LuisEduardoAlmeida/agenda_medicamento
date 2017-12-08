@@ -20,6 +20,20 @@ $font-size-base: 12px;
 
 @import "bootstrap";
 
+body{ 
+  background-size: 100%;
+  background-repeat: repeat-y; 
+
+  padding-top: 60px;
+  padding-bottom: 70px;
+  text-align: center;
+
+  overflow: hidden;
+  background: #000 url("backgraund.jpg") center no-repeat;
+  background-position: center;
+
+}
+
 .monster-margin {
   margin-bottom: -10px;
   margin-left: -15px;

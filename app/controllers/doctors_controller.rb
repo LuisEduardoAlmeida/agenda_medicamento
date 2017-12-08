@@ -42,7 +42,7 @@ class DoctorsController < ApplicationController
   def update
     respond_to do |format|
       if @doctor.update(doctor_params)
-        format.html { redirect_to doctors_path, notice: t("messages.cadastro_sucesso", :model=> params[:controller].singularize.camelize.constantize.model_name.human) }
+        format.html { redirect_to doctors_path, notice: t("messages.atualizado_sucesso", :model=> params[:controller].singularize.camelize.constantize.model_name.human) }
         format.json { render :show, status: :ok, location: @doctor }
       else
         format.html { render :edit }
