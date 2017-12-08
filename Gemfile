@@ -1,3 +1,4 @@
+# https://icons8.com.br/icon/set/rem%C3%A9dio/all
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -48,6 +49,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'haml'
 gem 'devise', "~>4.3.0"
+gem 'cancancan'
 gem 'simple_form'
 
 
