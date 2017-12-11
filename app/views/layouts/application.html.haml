@@ -5,10 +5,10 @@
       Sistema de Gerenciamento de Medicamentos
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
-    / %link{:rel => "shortcut icon", :href => "/assets/favicon.ico" }
+    %link{:rel => "shortcut icon", :href => "/assets/pill.png" }
     = csrf_meta_tags
-  %body
-    / - binding.pry
+  %body.bg_contener
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
     -if Rails.env.development?
       .desenvolvimento
         Desenvolvimento
@@ -27,18 +27,13 @@
       /     %br
       /     O sistema poderá apresentar instabilidade.
       .titulo
-        / = link_to image_tag('logo-fortaleza.png'), root_path
+        = link_to image_tag('pill.png'), root_path
         .texto-projeto
           %h4.nome-projeto Sistema de Gerenciamento de Medicamentos
       .collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
         %div.administrador.pull-right.barra-user-info
           %ul.nav.navbar-nav.navbar-right.navbar-admin.hidden-print
-            %li
-              = link_to '#', "data-toggle" => "dropdown" do
-                %span.glyphicon.glyphicon-tower.sdf
-                
-                %span.caret
             %li
               = link_to destroy_user_session_path, method: :delete do
                 %span.glyphicon.glyphicon-log-out
@@ -49,7 +44,16 @@
         .collapse.navbar-collapse      
           %ul.nav.navbar-nav
             %li= link_to "Home", root_path
-            / {class: controller?("admin", "avisos", "activity") && action?("index", "new", "edit", "show") ? "active" : nil}
+          %ul.nav.navbar-nav
+            %li.dropdown
+              = link_to '#', "data-toggle" =>  "dropdown" do
+                Cadastro
+                %b.caret
+                %ul.dropdown-menu
+                  %li= link_to 'Médicos', doctors_path
+                  %li= link_to 'Usuários', users_path                    
+
+
 
 
     .container-fluid

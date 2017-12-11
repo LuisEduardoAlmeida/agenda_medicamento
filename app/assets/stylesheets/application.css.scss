@@ -1,4 +1,4 @@
-/*
+                                                                                                                                        /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -24,6 +24,16 @@ $font-size-base: 12px;
 
 @import "bootstrap";
 
+
+.bg_contener{ 
+  background: url("") center no-repeat;
+  webkit-background-size: cover;
+  moz-background-size: cover;
+  o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-opacity: 0.9;
+}
 .td_padding_left {
   padding-left: 15px !important;
 }

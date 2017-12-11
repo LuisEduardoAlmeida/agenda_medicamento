@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
-  authorize_resource class: 'User'
-  skip_before_filter :require_no_authentication, :only => [:create,:new, :index]
+  #authorize_resource class: 'User'
+  #skip_before_filter :require_no_authentication, :only => [:create,:new, :index]
 
   def index
     # @usuarios = User.accessible_by(current_ability).includes(unidades_orcamentarias: :orgao).where(last_sign_in_at: ((DateTime.now-6.month)..DateTime.now)).order(:id)
