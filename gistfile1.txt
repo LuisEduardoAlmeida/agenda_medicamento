@@ -1,0 +1,61 @@
+O Eclipse é uma IDE bastante utilizada por desenvolvedores Java. Também tem versões para outras linguagens de programação, mas a comunidade que mais o utiliza é a dessa linguagem. O Eclipse é muito criticado por sua performance que deteriora ao passar do tempo, mas a sua quantidade de ferramentas, principalmente a de Refatoração, na minha opinião, tornam essa IDE viciante, fazendo seus usuários tolerarem sua lentidão eventual.
+
+Esse tutorial ensinará como instalá-lo no Ubuntu, mas deve funcionar para outras distribuições. Foi testado nas versões 11.10, 12.04 e 12.10, mas, como é bastante básico, deverá funcionar para outras versões do sistema. É bastante similar à instalação do Sublime Text 2 que está explicada em um post anterior.
+
+
+Passo 1 – Baixar o Eclipse
+Há diversas versões do Eclipse, cada uma com pacotes pré-instalados que procuram adequar a IDE para seu tipo de uso. Nada impede de que você baixe uma versão básica e vá instalando os plugins que forem necessários para o seu desenvolvimento.
+
+Nesse tutorial, vou explicar a instalação levando em consideração a versão Eclipse IDE for Java EE Developers pois ela é a mais utilizada e mais completa. Se deseja desenvolver aplicações Java Desktop, escolha o pacote Eclipse IDE for Java Developers pois ela já inclui plugins que você provavelmente queira, como por exemplo, o WindowBuilder. Mas, como já foi dito, você pode instalar esses plugins separadamente. Eu prefiro instalar a versão para Java EE pois ela possui mais plugins úteis e instalar o que eu precisar separadamente.
+
+Para baixar o Eclipse, vá até a página de downloads do site oficial, escolha a opção desejada, e, no menu da direita, selecione o pacote desejado (Linux 32 ou 64 bits). Nesse tutorial, utilizarei a versão Linux 64 bits do modelo citado anteriormente (Eclipse IDE for Java EE), que está atualmente na versão Juno SR1.
+
+Passo 2 – Descompactar o Pacote
+Após baixar o pacote desejado, descompacte ele na pasta que ele está (~/Downloads, provavelmente).
+
+tar xzf eclipse-jee-juno-SR1-linux-gtk-x86_64.tar.gz
+Após descompactar, mova a pasta descompactada para o diretório /opt da seguinte forma:
+
+sudo mv eclipse /opt/eclipse
+Passo 3 – Fazer o Eclipse executável via terminal
+Primeiro, dê as permissões corretas para os arquivos criados anteriormente:
+
+sudo chmod -R +r /opt/eclipse
+sudo chmod +x /opt/eclipse/eclipse
+Depois, coloque o caminho para o executável disponível no terminal:
+
+sudo touch /usr/bin/eclipse
+sudo chmod 755 /usr/bin/eclipse
+sudo sublime /usr/bin/eclipse
+No sublime, cole o seguinte conteúdo dentro do arquivo eclipse:
+
+#!/bin/sh
+export UBUNTU_MENUPROXY=0
+export ECLIPSE_HOME="/opt/eclipse"
+$ECLIPSE_HOME/eclipse $*
+Feche o sublime e crie um link para que o Eclipse seja possível de ser aberto de todos os locais:
+
+sudo ln -s /usr/bin/eclipse /bin/eclipse
+Passo 4 – Crie a entrada para o Ubuntu Dash
+Agora vamos deixar o Eclipse disponível no Ubuntu Dash (aplicativo que aparece quando é pressionada a tecla Super (símbolo do Windows)). Agora crie o arquivo de definição do atalho para o Dash:
+
+sudo sublime /usr/share/applications/eclipse.desktop
+No sublime, cole o seguinte conteúdo:
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+Comment=Eclipse IDE
+Exec=eclipse
+Icon=/opt/eclipse/icon.xpm
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Development;
+StartupNotify=true
+Salve e feche o sublime.
+
+Passo 5 – Executar o Eclipse
+Para executá-lo pela primeira vez, é preciso abrí-lo com a opção -clean:
+
+eclipse -clean
+Após a primeira execução, você pode executá-lo digitando eclipse no terminal ou então através do Ubuntu Dash.
