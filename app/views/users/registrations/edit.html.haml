@@ -4,7 +4,6 @@
   = f.error_notification
   .form-inputs
     = f.input :nome, :required => true, label: "Nome"
-    = f.input :cpf, :required => true, label: "CPF"
     = f.input :email, :required => true, :autofocus => true, label: "E-mail"
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %p

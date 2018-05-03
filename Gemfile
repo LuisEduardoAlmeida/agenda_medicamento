@@ -51,6 +51,8 @@ gem 'haml'
 gem 'devise', "~>4.3.0"
 gem 'simple_form'
 
+gem "wikipedia-client"
+
 
 
 group :development, :test do

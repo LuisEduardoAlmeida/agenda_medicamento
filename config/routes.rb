@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :providers
   resources :reminders
   root to: "doctors#index"
+  post '/messenger' => 'assistant#messenger'
 
   # Below for all other routes:
   devise_for :users, skip: ['registration']
